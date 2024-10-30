@@ -8,3 +8,52 @@ Explications du Script
 
 ### Exécute le script et enregistre l'arborescence dans un fichier texte
 $allGroups | ForEach-Object { Get-GroupHierarchy -GroupName $_ } | Out-File -FilePath "C:\AD_Group_Hierarchy.txt"
+
+Exemple de sortie : 
+
+        Arborescence pour le groupe GG_Admins :
+    - Groupe : GG_Admins
+        - Utilisateur : John Smith
+        - Groupe : GG_IT_Team
+            - Utilisateur : Alice Brown
+            - Utilisateur : Charlie Green
+            - Groupe : GG_Dev_Team
+                - Utilisateur : Dave White
+                - Utilisateur : Emma Black
+                - Membre de :
+                    - GG_Project_A
+        - Membre de :
+            - GG_UpperManagement
+    
+    Arborescence pour le groupe GG_IT_Team :
+    - Groupe : GG_IT_Team
+        - Utilisateur : Alice Brown
+        - Utilisateur : Charlie Green
+        - Groupe : GG_Dev_Team
+            - Utilisateur : Dave White
+            - Utilisateur : Emma Black
+            - Membre de :
+                - GG_Project_A
+        - Membre de :
+            - GG_Admins
+    
+    Arborescence pour le groupe GG_Dev_Team :
+    - Groupe : GG_Dev_Team
+        - Utilisateur : Dave White
+        - Utilisateur : Emma Black
+        - Membre de :
+            - GG_IT_Team
+            - GG_Project_A
+    
+    Arborescence pour le groupe GG_Project_A :
+    - Groupe : GG_Project_A
+        - Groupe : GG_Dev_Team
+            - Utilisateur : Dave White
+            - Utilisateur : Emma Black
+            - Membre de :
+                - GG_IT_Team
+        - Membre de :
+            - GG_UpperManagement
+
+
+
