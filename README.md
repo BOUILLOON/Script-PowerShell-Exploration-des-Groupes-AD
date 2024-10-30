@@ -102,12 +102,12 @@ Exemple de sortie :
 # Audit Complet de Sécurité des Groupes AD v1 
 Explication du script 
 
-    Explorer les hiérarchies des groupes et détecter les cycles d’imbrication circulaire et autres structures redondantes.
-    Lister les permissions et rôles des utilisateurs et groupes pour identifier les permissions potentiellement excessives.
-    Analyser les utilisateurs inactifs ou n’ayant pas changé leur mot de passe depuis longtemps.
-    Distinguer les groupes de sécurité et de distribution ainsi que leurs appartenances respectives.
-    Générer un rapport complet et exportable pour faciliter la correction des anomalies.
-    Détails et Optimisations
+    - Explorer les hiérarchies des groupes et détecter les cycles d’imbrication circulaire et autres structures redondantes.
+    - Lister les permissions et rôles des utilisateurs et groupes pour identifier les permissions potentiellement excessives.
+    - Analyser les utilisateurs inactifs ou n’ayant pas changé leur mot de passe depuis longtemps.
+    - Distinguer les groupes de sécurité et de distribution ainsi que leurs appartenances respectives.
+    - Générer un rapport complet et exportable pour faciliter la correction des anomalies.
+    - Détails et Optimisations
 Détails et Optimisations
 
     Dictionnaire $VisitedGroups pour détecter les cycles : Cette méthode permet de noter chaque groupe parent pour identifier les cycles au sein de la même branche, évitant ainsi les imbrications circulaires.
